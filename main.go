@@ -54,7 +54,7 @@ func main() {
 	shellResult := execShell()
 
 	if "" != shellResult {
-		msg.Content = fmt.Sprintf("%s %s 【 plat:%s 】 【 ip:%s 】 \n %s", date, now, ding.GamePlat, ding.PCip, shellResult)
+		msg.Content = fmt.Sprintf("%s %s plat:【 %s 】 ip:【 %s 】 srv:【 %s 】  \n %s", date, now, ding.GamePlat, ding.PCip, ding.Srv, shellResult)
 		ding.WebHook = "https://oapi.dingtalk.com/robot/send?access_token=590f3fe91bb6f0559df04721068480efbc0cf3df1ed21d502744f6e0e827e0d5"
 		result := ding.Send(msg)
 		fmt.Println(result)
